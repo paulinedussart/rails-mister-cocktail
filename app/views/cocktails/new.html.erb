@@ -1,0 +1,12 @@
+<div class="container d-flex justify-content-center">
+  <div class="col-12 col-lg-6 mt-5">
+    <h1>Add a new Cocktail</h1>
+    <%= simple_form_for(@cocktail) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :ingredient_ids, collection: Ingredient.all, input_html: { multiple: true } %>
+      <%= f.input :doses %>
+      <%= f.button :submit, class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </div>
+
+</div>

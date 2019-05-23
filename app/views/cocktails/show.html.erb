@@ -1,0 +1,18 @@
+<h1>Coctail</h1>
+
+<div class="container">
+  <div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"> <%= @cocktail.name %> </h5>
+    <ul class="card-text">
+      <%= @doses.each do |dose| %>
+      <li> <%= dose.description %> </li>
+      <%= end %>
+    </ul>
+  </div>
+</div>
+</div>
+
+
+<%= link_to "⬅ Back to list", cocktails_path %>
