@@ -1,18 +1,19 @@
-<h1>Coctail</h1>
-
-<div class="container">
-  <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title"> <%= @cocktail.name %> </h5>
-    <ul class="card-text">
-      <%= @doses.each do |dose| %>
-      <li> <%= dose.description %> </li>
-      <%= end %>
-    </ul>
+<div class="background-image-cocktail">
+  <div class="col-12 col-lg-6 container d-flex justify-content-center">
+    <div class="card card-show">
+      <h1 class="text-center "><%= @cocktail.name %></h1>
+      <h3 class="card-title"> </h3>
+      <ul class="card-text">
+        <% @doses.each do |dose| %>
+        <li> <%= dose.ingredient.name %> : <%= dose.description %> <%= link_to "Delete", dose_path(dose),
+          method: :delete,
+        data: { confirm: "Are you sure to delete this dose ?" } %> </li>
+        <% end %>
+      </ul>
+    </div>
+    <br>
   </div>
+  <div class="param-cocktail"></div>
+  <%= link_to "⬅ Back to list", cocktails_path %> <br>
+  <%= link_to "🍹 Add a Dose", new_cocktail_dose_path(@cocktail) %>
 </div>
-</div>
-
-
-<%= link_to "⬅ Back to list", cocktails_path %>

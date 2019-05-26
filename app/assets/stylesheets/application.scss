@@ -1,0 +1,42 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap/scss/bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+
+a {
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.background-image-cocktail {
+  background-image: asset-url('');
+  background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), asset-url('cocktail.jpg');
+  height: 100vh;
+}
+
+.content-cocktails {
+  height: 500px;
+}
+
+h1 {
+  margin: 30px;
+}
+
+.param-cocktail a {
+color: white;
+}

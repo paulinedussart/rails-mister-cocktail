@@ -1,14 +1,20 @@
-<h1>Cocktails</h1>
-
-<div class="container d-flex justify-content-center ">
-  <% @cocktails.each do |cocktail| %>
-  <div class="card lg-col-4">
-    <div class="card-body">
-      <h5 class="card-title"><%= cocktail.name %></h5>
-      <p class="card-text"><%=  %> </p>
-      <%= link_to "See details", cocktail_path(cocktail), class: "btn btn-primary" %>
+<div class="banner">
+  <div class="container justify-content-between">
+    <h1><strong>Art of Coctkails</strong></h1>
+    <p>New Cocktail Bar</p>
+    <p class="btn btn-light" ><%= link_to "Add a cocktail", new_cocktail_path %></p>
+  </div>
+</div>
+<div class="content-cocktails ">
+  <h1>Cocktails</h1>
+  <div class="container d-flex justify-content-between">
+    <% @cocktails.each do |cocktail| %>
+    <div class="card card-index lg-col-4">
+      <div class="card-body">
+        <h4 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail) %></h4>
+        <p class="card-text"> </p>
+      </div>
     </div>
-    <%= end %>
+    <% end %>
   </div>
-  </div>
-  <%= link_to "Add Cocktails", new_cocktail_path(cocktail), class: "btn btn-warning" %>
+</div>
